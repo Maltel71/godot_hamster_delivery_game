@@ -1,0 +1,311 @@
+[gd_scene format=3 uid="uid://dc8t82quf5ro6"]
+
+[ext_resource type="Script" uid="uid://1bmqsl4a2qq7" path="res://scripts/hud.gd" id="1_i1glq"]
+[ext_resource type="Theme" uid="uid://r7gicy3xlnrx" path="res://menus/ui_theme_fresh1.tres" id="2_eki7a"]
+[ext_resource type="Texture2D" uid="uid://do20ksjdye78m" path="res://textures/ui/arrow_v2.png" id="2_vgabk"]
+[ext_resource type="Theme" uid="uid://dhrb86321nlvd" path="res://menus/ui_theme_subtext.tres" id="3_8fwp6"]
+[ext_resource type="Texture2D" uid="uid://b011ol5s4tl66" path="res://textures/star_icon1_v1.png" id="5_abs7e"]
+[ext_resource type="Script" uid="uid://c3aptijipievd" path="res://scripts/speedometer.gd" id="6_hvg1e"]
+[ext_resource type="Texture2D" uid="uid://4rxljur0smut" path="res://textures/ui/ui_speedometer_bg_t_v1.png" id="6_k8emw"]
+[ext_resource type="Texture2D" uid="uid://b5ba4b3xq3jg" path="res://textures/ui/ui_speedometer_needle_t_v1.png" id="7_hvg1e"]
+[ext_resource type="Texture2D" uid="uid://udhf0nb56k4v" path="res://textures/ui/ui_carkeyhole_bg_t_v1.png" id="9_c0f76"]
+[ext_resource type="Texture2D" uid="uid://br5w4dxe0x8hy" path="res://textures/ui/ui_carkey_t_v1.png" id="10_6prc6"]
+[ext_resource type="Texture2D" uid="uid://1htq1vvtpj48" path="res://textures/ui_badge_sec_t_v1.png" id="11_6prc6"]
+
+[node name="HUD_Player" type="CanvasLayer" unique_id=844512391 node_paths=PackedStringArray("delivery_arrow", "key_sprite", "security_badge_visual", "special_failed_label", "dump_package_label", "starxp_debug_label")]
+script = ExtResource("1_i1glq")
+delivery_arrow = NodePath("DeliveryArrow")
+key_sprite = NodePath("Control_CarKey/Key")
+security_badge_visual = NodePath("SecurityBadgeVisual")
+special_failed_label = NodePath("SpecialDeliveryFailed")
+dump_package_label = NodePath("DumpPackageText")
+starxp_debug_label = NodePath("StarXPMeter_DebugLabel")
+
+[node name="Panel_Delivery" type="Panel" parent="." unique_id=1360305700]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -118.0
+offset_top = 2.0
+offset_right = 956.0
+offset_bottom = 101.0
+grow_horizontal = 2
+theme = ExtResource("2_eki7a")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel_Delivery" unique_id=1989094715]
+layout_mode = 0
+offset_left = 18.999994
+offset_top = -16.000002
+offset_right = 1926.0
+offset_bottom = 176.0
+scale = Vector2(0.70071614, 0.70071614)
+theme_override_constants/separation = 74
+
+[node name="TimerLabel" type="Label" parent="Panel_Delivery/HBoxContainer" unique_id=276833083]
+layout_mode = 2
+theme = ExtResource("3_8fwp6")
+text = "Timer: 00:00:00"
+
+[node name="DeliveryStatus" type="Label" parent="Panel_Delivery/HBoxContainer" unique_id=1696220948]
+layout_mode = 2
+theme = ExtResource("3_8fwp6")
+text = "DeliveryStatus"
+
+[node name="DeliveryLabel" type="Label" parent="Panel_Delivery/HBoxContainer" unique_id=1857262325]
+layout_mode = 2
+theme = ExtResource("3_8fwp6")
+text = "DeliveryArea_01"
+
+[node name="Panel_Parameter" type="Panel" parent="Panel_Delivery" unique_id=1699994849]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 105.0
+offset_right = 1073.0
+offset_bottom = 229.0
+
+[node name="SpecialType" type="Label" parent="Panel_Delivery/Panel_Parameter" unique_id=1090582519]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 61.999992
+offset_right = 790.0
+offset_bottom = 145.0
+scale = Vector2(0.54930687, 0.54930687)
+theme = ExtResource("3_8fwp6")
+text = "Status: \"All good\""
+
+[node name="SpecialStatus" type="Label" parent="Panel_Delivery/Panel_Parameter" unique_id=1468097279]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 14.0
+offset_right = 790.0
+offset_bottom = 97.0
+scale = Vector2(0.54930687, 0.54930687)
+theme = ExtResource("3_8fwp6")
+text = "Special: \"Afraid of heights\""
+
+[node name="Control_Stats" type="Control" parent="." unique_id=144263790]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -123.0
+offset_right = 40.0
+offset_bottom = -83.0
+
+[node name="MoneyLabel" type="Label" parent="Control_Stats" unique_id=123515194]
+modulate = Color(0.96429783, 0.9967267, 0.75552636, 1)
+layout_mode = 0
+offset_left = 19.999994
+offset_top = 130.83867
+offset_right = 334.0
+offset_bottom = 213.83867
+scale = Vector2(0.81851774, 0.81851774)
+theme = ExtResource("3_8fwp6")
+text = "Score:1000"
+
+[node name="HBoxContainer_StarRating" type="HBoxContainer" parent="Control_Stats" unique_id=1174814687]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 208.0
+offset_right = 629.0
+offset_bottom = 272.0
+theme_override_constants/separation = -2
+
+[node name="Star1" type="TextureRect" parent="Control_Stats/HBoxContainer_StarRating" unique_id=85579253]
+layout_mode = 2
+texture = ExtResource("5_abs7e")
+stretch_mode = 2
+
+[node name="Star2" type="TextureRect" parent="Control_Stats/HBoxContainer_StarRating" unique_id=314727959]
+layout_mode = 2
+texture = ExtResource("5_abs7e")
+stretch_mode = 2
+
+[node name="Star3" type="TextureRect" parent="Control_Stats/HBoxContainer_StarRating" unique_id=198111168]
+layout_mode = 2
+texture = ExtResource("5_abs7e")
+stretch_mode = 2
+
+[node name="Star4" type="TextureRect" parent="Control_Stats/HBoxContainer_StarRating" unique_id=433781428]
+layout_mode = 2
+texture = ExtResource("5_abs7e")
+stretch_mode = 2
+
+[node name="Star5" type="TextureRect" parent="Control_Stats/HBoxContainer_StarRating" unique_id=1103971449]
+layout_mode = 2
+texture = ExtResource("5_abs7e")
+stretch_mode = 2
+
+[node name="Panel_Car" type="Panel" parent="." unique_id=676468983]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -959.0
+offset_top = 972.0
+offset_right = -221.0
+offset_bottom = 1071.0
+grow_horizontal = 2
+theme = ExtResource("2_eki7a")
+
+[node name="CurrentSpeedLabel" type="Label" parent="Panel_Car" unique_id=1578403482]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 5.0
+offset_right = 342.0
+offset_bottom = 88.0
+theme = ExtResource("3_8fwp6")
+text = "Speed: 000"
+
+[node name="CurrentHeightLabel" type="Label" parent="Panel_Car" unique_id=1571098647]
+layout_mode = 0
+offset_left = 388.0
+offset_top = 1.0
+offset_right = 700.0
+offset_bottom = 84.0
+theme = ExtResource("3_8fwp6")
+text = "Height: 000"
+
+[node name="Control_Speedometer" type="Control" parent="." unique_id=377246877]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 74.0
+offset_top = 841.0
+offset_right = 114.0
+offset_bottom = 881.0
+script = ExtResource("6_hvg1e")
+max_speed_kmh = 300.0
+
+[node name="BG" type="TextureRect" parent="Control_Speedometer" unique_id=1503057491]
+layout_mode = 0
+offset_left = -73.0
+offset_top = -125.0
+offset_right = 183.0
+offset_bottom = 131.0
+texture = ExtResource("6_k8emw")
+
+[node name="Needle" type="TextureRect" parent="Control_Speedometer" unique_id=2047217541]
+layout_mode = 0
+offset_left = -75.0
+offset_top = -109.0
+offset_right = 181.0
+offset_bottom = 147.0
+pivot_offset = Vector2(129, 234)
+texture = ExtResource("7_hvg1e")
+
+[node name="Control_Debug" type="Control" parent="." unique_id=196858165]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 932.00006
+offset_top = -126.0
+offset_right = 972.00006
+offset_bottom = -86.0
+scale = Vector2(0.61211336, 0.61211336)
+
+[node name="RadioLabel" type="Label" parent="Control_Debug" unique_id=196560312]
+layout_mode = 0
+offset_left = 1035.7557
+offset_top = 596.2948
+offset_right = 1381.7557
+offset_bottom = 679.2948
+theme = ExtResource("3_8fwp6")
+text = "RadioStatus"
+
+[node name="StarXPMeter" type="Label" parent="Control_Debug" unique_id=738463298]
+layout_mode = 0
+offset_left = 1042.2905
+offset_top = 692.6821
+offset_right = 1419.2905
+offset_bottom = 775.6821
+scale = Vector2(1, 0.9943642)
+theme = ExtResource("3_8fwp6")
+text = "starxpmeter:"
+
+[node name="PhaseLabel" type="Label" parent="Control_Debug" unique_id=1460755862]
+layout_mode = 0
+offset_left = 1047.1915
+offset_top = 798.87164
+offset_right = 1424.1915
+offset_bottom = 881.87164
+theme = ExtResource("3_8fwp6")
+text = "DaynNightDebug"
+
+[node name="Controlls_temp" type="Label" parent="." unique_id=790814695]
+visible = false
+offset_left = 1663.0001
+offset_top = 812.00006
+offset_right = 2260.0
+offset_bottom = 1497.0
+scale = Vector2(0.39999998, 0.39999998)
+theme = ExtResource("3_8fwp6")
+text = "WASD - move/fly
+Q,E - roll/steer in air
+MOUSE - camera
+R - flip car
+F - activate thrusters
+SPACE - thruster up
+ESC - menu"
+
+[node name="DeliveryArrow" type="TextureRect" parent="." unique_id=1261905528]
+z_index = 20
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("2_vgabk")
+
+[node name="Control_CarKey" type="Control" parent="." unique_id=2038163363]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Keyhole" type="TextureRect" parent="Control_CarKey" unique_id=1568506193]
+layout_mode = 0
+offset_left = 1559.0001
+offset_top = 852.99994
+offset_right = 1687.0001
+offset_bottom = 980.99994
+scale = Vector2(2.2041497, 2.2041497)
+texture = ExtResource("9_c0f76")
+
+[node name="Key" type="TextureRect" parent="Control_CarKey" unique_id=673562794]
+z_index = 1
+layout_mode = 0
+offset_left = 1636.0
+offset_top = 927.0
+offset_right = 1764.0
+offset_bottom = 1055.0
+scale = Vector2(2.1240473, 2.1240473)
+pivot_offset = Vector2(62.145508, 61.674683)
+texture = ExtResource("10_6prc6")
+
+[node name="SecurityBadgeVisual" type="TextureRect" parent="." unique_id=1743063709]
+modulate = Color(0.6202419, 0.78991175, 0.8304334, 1)
+offset_left = -15.0
+offset_top = 156.00002
+offset_right = 497.0
+offset_bottom = 668.0
+scale = Vector2(0.27211568, 0.27260476)
+texture = ExtResource("11_6prc6")
+
+[node name="SpecialDeliveryFailed" type="Label" parent="." unique_id=1843831296]
+visible = false
+offset_left = 605.0
+offset_top = 280.0
+offset_right = 1264.0
+offset_bottom = 390.0
+theme_override_colors/font_color = Color(0.9839863, 0.25378954, 0.08897001, 1)
+theme_override_font_sizes/font_size = 60
+text = "Special Delivery Failed."
+
+[node name="DumpPackageText" type="Label" parent="." unique_id=443888586]
+offset_left = 653.0
+offset_top = 115.0
+offset_right = 1206.0
+offset_bottom = 225.0
+theme_override_font_sizes/font_size = 60
+text = "Dump The Package"
+
+[node name="StarXPMeter_DebugLabel" type="Label" parent="." unique_id=532958253]
+offset_left = 339.0
+offset_top = 92.0
+offset_right = 467.0
+offset_bottom = 147.0
+theme_override_font_sizes/font_size = 40
+text = "StarXP"

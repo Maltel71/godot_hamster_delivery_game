@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://cy010oxxoqk7f"]
+
+[ext_resource type="Script" uid="uid://cob8xmwliqx4t" path="res://scripts/shop_menu.gd" id="1_daaws"]
+[ext_resource type="Theme" uid="uid://r7gicy3xlnrx" path="res://menus/ui_theme_fresh1.tres" id="2_38hln"]
+[ext_resource type="Theme" uid="uid://dhrb86321nlvd" path="res://menus/ui_theme_subtext.tres" id="3_lj50s"]
+[ext_resource type="Texture2D" uid="uid://3ckrat70q8lj" path="res://particlesyst/T_MarbleNoise5_tiled.png" id="4_j1v71"]
+
+[node name="Menu_Mechanic" type="CanvasLayer" unique_id=844512391]
+script = ExtResource("1_daaws")
+
+[node name="Panel" type="Panel" parent="." unique_id=1360305700]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -762.0
+offset_top = 101.0
+offset_right = -41.0
+offset_bottom = 918.0
+grow_horizontal = 2
+theme = ExtResource("2_38hln")
+
+[node name="Label_Header" type="Label" parent="Panel" unique_id=276833083]
+layout_mode = 0
+offset_left = 53.999992
+offset_top = 31.000002
+offset_right = 493.0
+offset_bottom = 114.0
+theme = ExtResource("3_lj50s")
+text = "MECHANIC"
+
+[node name="ExitButton" type="Button" parent="Panel" unique_id=929997083]
+layout_mode = 0
+offset_left = 548.0
+offset_top = 817.0
+offset_right = 721.0
+offset_bottom = 886.0
+text = "Close X"
+
+[node name="GridContainer" type="GridContainer" parent="Panel" unique_id=118580895]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 127.0
+offset_right = 2438.909
+offset_bottom = 2232.4546
+scale = Vector2(0.275, 0.275)
+theme_override_constants/h_separation = 62
+theme_override_constants/v_separation = 66
+columns = 4
+
+[node name="Menuitem12" type="Button" parent="Panel/GridContainer" unique_id=1489711704]
+layout_mode = 2
+text = "Extra Lights
+500:-"
+icon = ExtResource("4_j1v71")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Menuitem13" type="Button" parent="Panel/GridContainer" unique_id=1011517453]
+layout_mode = 2
+text = "Extra Lights
+500:-"
+icon = ExtResource("4_j1v71")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Menuitem14" type="Button" parent="Panel/GridContainer" unique_id=1517675235]
+layout_mode = 2
+text = "Extra Lights
+500:-"
+icon = ExtResource("4_j1v71")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Menuitem15" type="Button" parent="Panel/GridContainer" unique_id=565704425]
+layout_mode = 2
+text = "Extra Lights
+500:-"
+icon = ExtResource("4_j1v71")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Menuitem16" type="Button" parent="Panel/GridContainer" unique_id=1533448212]
+layout_mode = 2
+text = "Extra Lights
+500:-"
+icon = ExtResource("4_j1v71")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Menuitem17" type="Button" parent="Panel/GridContainer" unique_id=524650273]
+layout_mode = 2
+text = "Extra Lights
+500:-"
+icon = ExtResource("4_j1v71")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Menuitem18" type="Button" parent="Panel/GridContainer" unique_id=2002864704]
+layout_mode = 2
+text = "Extra Lights
+500:-"
+icon = ExtResource("4_j1v71")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Menuitem19" type="Button" parent="Panel/GridContainer" unique_id=1919971184]
+layout_mode = 2
+text = "Extra Lights
+500:-"
+icon = ExtResource("4_j1v71")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Menuitem20" type="Button" parent="Panel/GridContainer" unique_id=824513500]
+layout_mode = 2
+text = "Extra Lights
+500:-"
+icon = ExtResource("4_j1v71")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Menuitem21" type="Button" parent="Panel/GridContainer" unique_id=697371262]
+layout_mode = 2
+text = "Extra Lights
+500:-"
+icon = ExtResource("4_j1v71")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Menuitem22" type="Button" parent="Panel/GridContainer" unique_id=1563762977]
+layout_mode = 2
+text = "Extra Lights
+500:-"
+icon = ExtResource("4_j1v71")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Menuitem23" type="Button" parent="Panel/GridContainer" unique_id=1067045610]
+layout_mode = 2
+text = "Extra Lights
+500:-"
+icon = ExtResource("4_j1v71")
+icon_alignment = 1
+vertical_icon_alignment = 0
